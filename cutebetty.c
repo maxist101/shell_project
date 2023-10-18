@@ -6,7 +6,7 @@
 * Return: 0 on success alwa.
 */
 
-int main(void)
+int mint(void)
 {
 char *aux = "Jessica and Max\n";
 ssize_t length = 16;
