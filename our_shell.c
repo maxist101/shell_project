@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
   *main - entry point/path to our team project
   *Return: 0 always on successful

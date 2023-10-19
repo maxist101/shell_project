@@ -1,12 +1,9 @@
 #include "shell.h"
 
  /**
- *line_emp - checks if and empty exist
- *@buff: The input line to check empty line:
- *
- *this function checks to determine empty line
- * Return: 0 or return 1 on fail or success
- *
+ * line_emp - checks if exists a empty line
+ * @buff: line
+ * Return: 0 or 1 (int)
  */
 
 int line_emp(char *buff) /* our function to check for empty line*/
