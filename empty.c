@@ -1,4 +1,4 @@
-#include <shell.h>
+#include "shell.h"
 
  /**
  *line_emp - checks if and empty exist
@@ -9,13 +9,13 @@
  *
  */
 
-int line_emp(char buff) /* our function to check for empty line*/
+int line_emp(char *buff) /* our function to check for empty line*/
 {
 	int africa;
 
 	for (africa = 0; buff[africa] != '\0'; africa++)
 	{
-	if (buff[africa] != " ")
+	if (buff[africa] != ' ')
 	return (0);
 	}
 
