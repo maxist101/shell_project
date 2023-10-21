@@ -2,6 +2,7 @@
 /**
  * exe_cmd - our team code to be to execute a command
  * the process is forked to handle error during code execution.
+ * @argv: Argument vector
  * @cmd: the command for executuion
  */
 void exe_cmd(char *cmd, char *argv[])
@@ -30,7 +31,6 @@ exit(EXIT_FAILURE);
 }
 else
 {
-/* our code to process the mummy to wait for child*/
 waitpid(ourchild_pid, &art, 0);
 }
 }
