@@ -1,54 +1,39 @@
-int main(int argc, char *argv[], char **env)
-  {
-  char *buffz = NULL, *apt = "$";
-  size_t buffz_size = 0;
-  ssize_t feed;
-  pid_t mpid;
-  int status;
-  bool from_pipe = false;
-  struct stat statbuf;
-  
-  if (!isatty(STDIN_FILENO))
-  {
-  from_pipe = true;
-  }
-  
-  while (1)
-  {
-  write(STDOUT_FILENO, apt, 1);
-  
-  feed = getline(&buffz, &buffz_size, stdin);
-  if (feed == -1)
-  {
-  perror("invalid (getline)");
- free(buffz);
-  exit(EXIT_FAILURE);
-  }
+#include "shell.h"
+/**
+ * main - the entry point of our shell group project
+ * Return: O on success always
+ */
+int main(void)
+{
+char maxwell[BUFFER_SIZE];
+char *echo = "ALXisfun:$ ";
+int jessica = isatty(STDIN_FILENO) == 0;
+char *Err = NULL;
+size_t len_input;
+for (;;)
+{
+write(STDOUT_FILENO, echo, strlen(echo));
+if (fgets(maxwell, sizeof(maxwell), stdin) == NULL)
+{
+if (feof(stdin))
+{
+char *next_line = "\n";
+write(STDOUT_FILENO, next_line, strlen(next_line));
+break;
 }
-  
-  if (buffz[feed - 1] == '\n')
-  {
-  buffz[feed - 1] = '\0';
-  }
-  
-  mpid = fork();
-  if (mpid == -1)
-  {
-  perror("(error (fork)*)");
-  exit(EXIT_FAILURE);
-  }
-  
-  if (mpid == 0)
-  {
-  _execute(buffz, env);
-  }
-  
-  if (waitpid(mpid, &status, 0) == -1)
-  {
-  perror("[error(wait)*]");
-  exit(EXIT_FAILURE);
-  }
-  }
-  
-  free(buffz);
- return (0);
+Err = "invalid Err Err: fgets\n";
+write(STDERR_FILENO, Err, strlen(Err));
+exit(EXIT_FAILURE);
+}
+len_input = strlen(maxwell);
+if (len_input > 0 && maxwell[len_input - 1] == '\n')
+{
+maxwell[len_input - 1] = '\0'; /* we are Removing the next line character*/
+}
+if (jessica)
+{
+break; /* we are now Exiting the loop if aboved conditions are not meant*/
+}
+}
+return (0);
+}

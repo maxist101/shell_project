@@ -22,11 +22,6 @@
 /* starting point of all our prototypes, see Man in terminal*/
 void exe_cmd(char *cmd, char *argv[]);
 
-int our_strcmp(char *s1, char *s2);
-void our_env(void);
-int line_emp(char *buff);
-char **our_split(char *str, char *sep);
-char *pathfinder(char *command);
-int terminator(char **arg);
+
 
 #endif
