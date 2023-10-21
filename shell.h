@@ -19,12 +19,6 @@
 
 #define BUFFER_SIZE 256
 
-
-
-
-
-
-
 /* starting point of all our prototypes, see Man in terminal*/
 void exe_cmd(char *cmd, char *argv[]);
 

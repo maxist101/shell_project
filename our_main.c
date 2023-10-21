@@ -3,7 +3,6 @@
  * main - the entry point of our shell group project
  * Return: O on success always
  */
-/* entry point of our group project*/
 int main(void)
 {
 char maxwell[BUFFER_SIZE];
