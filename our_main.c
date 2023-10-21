@@ -15,7 +15,7 @@ char *echo = "ALXisfun:$ ";
 int jessica = isatty(STDIN_FILENO) == 0;
 
 char *Err = NULL;
-int len_input;
+size_t len_input;
 
 for (;;)
 {
