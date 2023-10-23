@@ -33,7 +33,7 @@ return (1);
 }
 
 /**
- *unset_environmet -  our code Function to  run unsetenv
+ *unset_environment -  our code Function to  run unsetenv
  * @tokz: Tokenization
  * Return: 1 on success always,else return 0
  */
